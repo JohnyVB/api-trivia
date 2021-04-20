@@ -1,12 +1,13 @@
-import { Router } from 'express';
+const { Router } = require('express');
+
 // Controllers
-import * as TaskCtrl from '../controllers/task.controller';
+const TaskCtrl = require('../controllers/task.controller');
 
 const router = Router();
 
 router.get('/', TaskCtrl.findAllTasks);
 
-router.post('/', TaskCtrl.createtask);
+router.post('/', TaskCtrl.createTask);
 
 router.get('/done', TaskCtrl.findAllDoneTasks);
 
@@ -16,4 +17,4 @@ router.delete('/:id', TaskCtrl.deleteTask);
 
 router.put('/:id', TaskCtrl.updateTask);
 
-export default router;
+module.exports = router;

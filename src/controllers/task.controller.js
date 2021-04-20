@@ -1,13 +1,13 @@
 // Middlewares
-import asyncHandler from '../middleware/asyncHandler';
+const asyncHandler = require('../middleware/asyncHandler');
 
 // Models
-import Task from '../models/Task';
+const Task = require('../models/Task');
 
 // Pagination
-import { getPagination } from '../libs/getPagination';
+const { getPagination } = require('../libs/getPagination');
 
-export const findAllTasks = asyncHandler(async (req, res) => {
+const findAllTasks = asyncHandler(async (req, res) => {
   const { size, page, title } = req.query;
 
   const condition = title
@@ -22,7 +22,7 @@ export const findAllTasks = asyncHandler(async (req, res) => {
   res.json(tasks);
 });
 
-export const createtask = asyncHandler(async (req, res) => {
+const createTask = asyncHandler(async (req, res) => {
   if (!req.body.title) {
     return res.status(400).send({ message: 'Content cannot be empty' });
   }
@@ -38,7 +38,7 @@ export const createtask = asyncHandler(async (req, res) => {
   res.json('New task created');
 });
 
-export const findOneTask = asyncHandler(async (req, res) => {
+const findOneTask = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const task = await Task.findById(id);
 
@@ -50,7 +50,7 @@ export const findOneTask = asyncHandler(async (req, res) => {
   res.json(task);
 });
 
-export const deleteTask = asyncHandler(async (req, res) => {
+const deleteTask = asyncHandler(async (req, res) => {
   const { id } = req.params;
   await Task.findByIdAndDelete(id);
   res.json({
@@ -58,15 +58,24 @@ export const deleteTask = asyncHandler(async (req, res) => {
   });
 });
 
-export const findAllDoneTasks = asyncHandler(async (req, res) => {
+const findAllDoneTasks = asyncHandler(async (req, res) => {
   const tasks = await Task.find({ done: true });
   res.json(tasks);
 });
 
-export const updateTask = asyncHandler(async (req, res) => {
+const updateTask = asyncHandler(async (req, res) => {
   const { id } = req.params;
   await Task.findByIdAndUpdate(id, req.body);
   res.json({
     message: 'Task was updated Successfully'
   });
 });
+
+module.exports = {
+  updateTask,
+  findAllDoneTasks,
+  deleteTask,
+  findOneTask,
+  createTask,
+  findAllTasks
+};

@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose';
-import mongoosePaginate from 'mongoose-paginate-v2';
+const { Schema, model } = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const taskSchema = new Schema(
   {
@@ -14,4 +14,4 @@ const taskSchema = new Schema(
 );
 
 taskSchema.plugin(mongoosePaginate);
-export default model('Task', taskSchema);
+module.exports = model('Task', taskSchema);

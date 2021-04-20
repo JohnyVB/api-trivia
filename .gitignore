@@ -5,5 +5,3 @@ node_modules
 
 # babel compilation
 dist
-
-api-tasks-node

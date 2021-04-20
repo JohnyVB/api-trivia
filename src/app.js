@@ -1,7 +1,7 @@
-import express from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import taskRoutes from './routes/task.routes';
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const taskRoutes = require('./routes/task.routes');
 
 const app = express();
 // const corsOptions = {origin: 'url', Credential: true}
@@ -22,4 +22,4 @@ app.get('/', (req, res) => {
 
 app.use('/api/tasks', taskRoutes);
 
-export default app;
+module.exports = app;

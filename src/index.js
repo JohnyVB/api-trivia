@@ -1,5 +1,5 @@
-import app from './app';
-import './db';
+const app = require('./app');
+require('./db');
 
 app.listen(app.get('PORT'), () => {
   console.log('Server up');

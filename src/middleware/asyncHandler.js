@@ -1,4 +1,4 @@
 const asyncHandler = (controllerFunc) => (req, res, next) =>
   Promise.resolve(controllerFunc(req, res, next)).catch(next);
 
-export default asyncHandler;
+module.exports = asyncHandler;

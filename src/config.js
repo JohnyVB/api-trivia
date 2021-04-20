@@ -1,6 +1,5 @@
-import { config } from 'dotenv';
-config();
+require('dotenv').config();
 
-export default {
+module.exports = {
   mongodbURL: process.env.DB_URI
 };

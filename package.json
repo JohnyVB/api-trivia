@@ -1,12 +1,10 @@
 {
   "name": "rest_api-task",
   "version": "1.0.0",
-  "description": "",
+  "description": "API mongodb and node ",
   "main": "./src/index.js",
   "scripts": {
-    "start": "npx babel-node ./src/index.js",
-    "postinstall": "npm run build",
-    "build": "babel src --out-dir ./app/dist"
+    "start": "node ./src/index.js"
   },
   "keywords": [],
   "author": "Joan Roca Hormaza <remnyachizot2015@gmail.com>",
@@ -16,14 +14,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
-    "@babel/node": "^7.13.13",
     "mongoose-paginate-v2": "^1.3.17",
     "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.13.14",
-    "@babel/core": "^7.13.15",
-    "@babel/plugin-transform-runtime": "^7.13.15",
-    "@babel/preset-env": "^7.13.15"
   }
 }
