@@ -4,10 +4,10 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "dev": "npx babel-node src/index.js",
+    "dev": "npx babel-node ./src/index.js",
     "postinstall": "npm run build",
     "build": "babel src --out-dir dist",
-    "start": "node dist/index.js"
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "Joan Roca Hormaza <remnyachizot2015@gmail.com>",
