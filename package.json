@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx babel-node ./src/index.js",
     "postinstall": "npm run build",
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir ./app/dist",
     "start": "node ./dist/index.js"
   },
   "keywords": [],
