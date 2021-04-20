@@ -5,7 +5,7 @@ const asyncHandler = require('../middleware/asyncHandler');
 const Task = require('../models/Task');
 
 // Pagination
-const { getPagination } = require('../libs/getPagination');
+const getPagination = require('../libs/getPagination');
 
 const findAllTasks = asyncHandler(async (req, res) => {
   const { size, page, title } = req.query;
