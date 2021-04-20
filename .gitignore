@@ -1,0 +1,7 @@
+node_modules
+
+# variables de entorno || environment variables
+.env
+
+# babel compilation
+dist
