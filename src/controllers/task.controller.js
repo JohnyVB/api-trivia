@@ -35,7 +35,7 @@ const createTask = asyncHandler(async (req, res) => {
 
   const taskSaved = await newTask.save();
   console.log(taskSaved);
-  res.json('New task created');
+  res.json({ 'status': 200, 'response': 'New task created' });
 });
 
 const findOneTask = asyncHandler(async (req, res) => {
