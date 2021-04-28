@@ -17,7 +17,7 @@ app.set('PORT', process.env.PORT || 5001);
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('<h1>Welcome to my application</h1>');
+  res.send('<h2>Welcome to my application</h2>');
 });
 
 app.use('/api/tasks', taskRoutes);
